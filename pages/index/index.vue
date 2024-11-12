@@ -1,8 +1,6 @@
 <template>
-	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view class="text-area">
-			<text class="title">{{title}}</text>
+	<view class="content-box">
+		<view class="top-area">
 		</view>
 	</view>
 </template>
@@ -15,7 +13,6 @@
 		},
 		data() {
 			return {
-				title: 'Hello'
 			}
 		},
 		onLoad() {
@@ -27,30 +24,28 @@
 	}
 </script>
 
-<style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin-top: 200rpx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50rpx;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
+<style lang="scss">
+	@import "~@/common/stylus/variable.scss";
+	page {
+		width: 100%;
+		height: 100%;
+	};
+	.content-box {
+		@include content-wrapper;
+		background: #FAFAFA !important;
+		padding-bottom: 0;
+		::v-deep .u-popup {
+			flex: none !important
+		};
+		.top-area {
+			height: 50px;
+			padding: 10px;
+			box-sizing: border-box;
+			width: 100%;
+			margin: 80px 0 10px 0;
+		};
+		::v-deep .u-transition {
+			z-index: 100000 !important;
+		}
 	}
 </style>
